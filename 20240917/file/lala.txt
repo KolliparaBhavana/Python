@@ -1,0 +1,2 @@
+List: ['app', 'man', 'gr']
+Tuple: ('app', 'man', 'gr')
