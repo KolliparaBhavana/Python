@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./healthcare_patient_management_system/frontend"
+    ]
+}
