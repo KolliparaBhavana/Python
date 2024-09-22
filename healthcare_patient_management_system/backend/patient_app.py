@@ -4,8 +4,7 @@ from patient_db import searchByDisease, updatePatient, deletePatient, readPatien
 patientTablesCreate()                                                  ###
 app = Flask(__name__)
 
-class e(Exception):
-    print("ID NOT present in patients records")
+
 @app.route('/patients',methods=['POST'])
 def patients_create():
     body = request.get_json()
@@ -17,10 +16,6 @@ def patients_create():
 
 @app.route('/patients/<id>',methods=['GET'])
 def patients_read_by_id(id):
-    body = request.get_json()
-    old_record = readPatientById(id)
-    if not old_record:
-        return jsonify({'message': 'Record is not found!'})
     patient = readPatientById(id)
     patient_dict = {'id':patient.id, 'name':patient.name, 'age':patient.age,'disease':patient.disease}
     return jsonify(patient_dict)

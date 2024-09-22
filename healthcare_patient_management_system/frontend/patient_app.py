@@ -48,10 +48,9 @@ def menu():
         patients=app.read_all()
         print(patients)
     elif choice==2:
-            id=int(input('Enter ID:'))
-
-            patient=app.read_by_id(id)
-            print(patient)
+        id=int(input('Enter ID:'))
+        patient=app.read_by_id(id)
+        print(patient)
     elif choice==3:
         name=input('Enter Name:')
         age=input('Enter age:')
@@ -142,11 +141,13 @@ def menu():
     else:
         print('''Invalid input''')
     return choice
+
 def menus():
     choice=menu()
     while choice!=11:
         choice=menu()
     print('''Thanks for using the Application!''')
+
 #driver program
 menus()
 
